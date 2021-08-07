@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+:root {
+  --theme-translate-left: -12px, 2px;
+  --theme-translate-right: 15px, 2px;
+  --theme-transition-duration: 400ms;
+}
+
+* {
+  font-family: "Muli", sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  overflow-y: scroll;
+}
+
+.App {
+  padding-top: 2em;
+  text-align: center;
+}
+
+.intro {
+  margin-bottom: 2em;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  border: 2px solid black;
+  background: lightgray;
+  border-radius: 35%;
+  width: 60px;
+  cursor: pointer;
+}
+
+.theme-toggle.dark {
+  background: gray;
+}
+
+.light-mode-enter {
+  transform: translate(var(--theme-translate-right)) !important;
+  opacity: 0.3 !important;
+}
+.light-mode-enter-done {
+  transform: translate(var(--theme-translate-left)) !important;
+  opacity: 1 !important;
+  transition: opacity, transform var(--theme-transition-duration) !important;
+}
+.light-mode-exit {
+  transform: translate(var(--theme-translate-left)) !important;
+  opacity: 1 !important;
+}
+.light-mode-exit-done {
+  transform: translate(var(--theme-translate-right)) !important;
+  opacity: 0.3 !important;
+  transition: opacity, transform var(--theme-transition-duration) !important;
+}
+
+.dark-mode-enter {
+  transform: translate(var(--theme-translate-left)) !important;
+  opacity: 0 !important;
+}
+.dark-mode-enter-done {
+  transform: translate(var(--theme-translate-right)) !important;
+  opacity: 1 !important;
+  transition: opacity, transform var(--theme-transition-duration) !important;
+}
+.dark-mode-exit {
+  transform: translate(var(--theme-translate-right)) !important;
+  opacity: 1 !important;
+}
+.dark-mode-exit-done {
+  transform: translate(var(--theme-translate-left)) !important;
+  opacity: 0 !important;
+  transition: opacity, transform var(--theme-transition-duration) !important;
+}
